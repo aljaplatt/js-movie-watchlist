@@ -2,8 +2,8 @@ const searchBtn = document.querySelector('.search-btn');
 const userInputEl = document.querySelector('input');
 const movieContainer = document.querySelector('.movie-container');
 
-const renderMovies = movieArr => {
-	movieArr.map(movie => {
+const renderMovies = async movieArr => {
+	movieArr.map(async movie => {
 		// create div to hold data for each movie
 		const movieDiv = document.createElement('div');
 		movieDiv.classList.add('movieDiv');
@@ -34,9 +34,13 @@ const renderMovies = movieArr => {
 		textDiv.append(yearEl);
 		movieDiv.append(textDiv);
 		//=========================================
-		//* imdb info 
-		// const imdbID = movie.imdbID;
-		// console.log(title);
+		//* imdb info
+		const imdbId = movie.imdbID;
+		let response = await fetch(
+			`https://www.omdbapi.com/?i=${imdbId}&apikey=7188dc6d`
+		);
+		let imdbData = await response.json();
+		console.log(imdbData);
 	});
 };
 

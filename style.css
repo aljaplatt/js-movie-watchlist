@@ -31,6 +31,42 @@ select {
 	font: inherit;
 }
 
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	width: 60%;
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-image: url(./img/cinema.jpg);
+	background-position: center;
+	padding: 4em 2em;
+	object-fit: cover;
+	color: #eeeeee;
+}
+
+h1 {
+	font-size: 3rem;
+}
+
+.watchlist-link {
+	color: #eeeeee;
+	text-decoration: none;
+	font-weight: bolder;
+}
+
+.watchlist-link:hover,
+.watchlist-link:focus {
+	color: gold;
+	transform: scale(1.2);
+	/* transition: all; */
+}
+
+/* init layout  */
 .movie-container {
 	border: 3px solid red;
 }

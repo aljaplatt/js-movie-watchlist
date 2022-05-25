@@ -33,6 +33,8 @@ const renderMovies = movieArr => {
 		yearEl.textContent = `${year}`;
 		textDiv.append(yearEl);
 		movieDiv.append(textDiv);
+		//=========================================
+		//* imdb info 
 		// const imdbID = movie.imdbID;
 		// console.log(title);
 	});

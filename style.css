@@ -1,0 +1,18 @@
+.movie-container {
+	border: 3px solid red;
+}
+
+.movieDiv {
+	border: 2px solid purple;
+	display: flex;
+	margin: 2em 0;
+}
+
+.textDiv {
+	border: 2px solid orange;
+}
+
+.poster {
+	width: 15%;
+	max-width: 300px;
+}

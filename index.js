@@ -15,6 +15,7 @@ const renderMovies = async movieArr => {
 		// create div to hold data for each movie
 		const movieDiv = document.createElement('div');
 		movieDiv.classList.add('movieDiv');
+		movieDiv.classList.add('flex');
 		const textDiv = document.createElement('div');
 		textDiv.classList.add('textDiv');
 		// append movieDiv to HTML
@@ -24,7 +25,7 @@ const renderMovies = async movieArr => {
 		//* poster
 		const posterEl = document.createElement('img');
 		posterEl.classList.add('poster');
-		const poster = movie.Poster;
+		const poster = imdbData.Poster;
 		// console.log(poster);
 		posterEl.src = poster;
 		movieDiv.append(posterEl);
@@ -32,7 +33,7 @@ const renderMovies = async movieArr => {
 		//* title
 		const titleEl = document.createElement('h3');
 		titleEl.classList.add('title');
-		const title = movie.Title;
+		const title = imdbData.Title;
 		titleEl.textContent = `${title}`;
 		textDiv.append(titleEl);
 		//==========================================
@@ -75,6 +76,11 @@ const renderMovies = async movieArr => {
 		const imdbRating = imdbData.imdbRating;
 		imdbRatingEl.textContent = `${imdbRating}`;
 		textDiv.append(imdbRatingEl);
+
+		const watchBtn = document.createElement('button');
+		watchBtn.classList.add('watch-btn');
+		watchBtn.textContent = 'Add to Watchlist?';
+		textDiv.append(watchBtn);
 	});
 };
 
@@ -88,7 +94,7 @@ const fetchMovies = async _ => {
 	let data = await res.json();
 	// console.log(data);
 	const movies = data.Search;
-	console.log(movies);
+	// console.log(movies);
 	renderMovies(movies);
 };
 

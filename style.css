@@ -38,6 +38,10 @@ body {
 	margin: 0 auto;
 }
 
+.margin-0 {
+	margin: 0;
+}
+
 .header {
 	display: flex;
 	justify-content: space-between;
@@ -45,12 +49,12 @@ body {
 	background-image: url(./img/cinema.jpg);
 	background-position: center;
 	padding: 4em 2em;
-	object-fit: cover;
+	/* object-fit: cover; */
 	color: #eeeeee;
 }
 
 h1 {
-	font-size: 3rem;
+	font-size: 3.5rem;
 }
 
 .watchlist-link {
@@ -66,6 +70,32 @@ h1 {
 	/* transition: all; */
 }
 
+/** search input and button */
+
+.search {
+	padding: 0.5em 1em;
+	width: 79.5%;
+	border: none;
+	cursor: pointer;
+	font-size: 1.3rem;
+}
+
+.search-btn {
+	padding: 0.5em 1em;
+	width: 20%;
+	border: none;
+	cursor: pointer;
+	background: gold;
+	font-size: 1.3rem;
+	font-weight: bolder;
+}
+
+.search-btn:hover,
+.search-btn:focus {
+	background: #eeeeee;
+	/* color: gold; */
+}
+
 /* init layout  */
 .movie-container {
 	border: 3px solid red;
@@ -78,11 +108,22 @@ h1 {
 }
 
 .textDiv {
-	border: 2px solid orange;
-	margin-left: 1em;
+	border: 2px solid #ffa500;
+	margin-left: 1.5em;
+	/* margin: 0 auto; */
+	max-width: 600px;
 }
 
 .poster {
 	width: 15%;
 	max-width: 300px;
+}
+
+.margin-bottom {
+	margin-bottom: 0.5em;
+}
+
+.title {
+	display: inline-block;
+	margin: 0 0.5em 0.5em 0;
 }

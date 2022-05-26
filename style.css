@@ -99,12 +99,14 @@ h1 {
 /* init layout  */
 .movie-container {
 	border: 3px solid red;
+	background-color: #08070d;
 }
 
 .movieDiv {
 	border: 2px solid purple;
 	display: flex;
 	margin: 2em 0;
+	background-color: #eeeeee;
 }
 
 .textDiv {
@@ -115,20 +117,20 @@ h1 {
 }
 
 .poster {
-	width: 15%;
+	width: 25%;
 	max-width: 300px;
 }
 
 .margin-bottom {
-	margin-bottom: 0.5em;
+	margin-bottom: 1em;
 }
 
 .title {
 	display: inline-block;
 	margin: 0 0.5em 0.5em 0;
-	font-size: 1.5rem;
+	font-size: 1.7rem;
 }
 
 .plot {
-	font-size: 1.2rem;
+	font-size: 1.3rem;
 }

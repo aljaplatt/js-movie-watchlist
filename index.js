@@ -1,6 +1,15 @@
 const searchBtn = document.querySelector('.search-btn');
 const userInputEl = document.querySelector('input');
 const movieContainer = document.querySelector('.movie-container');
+let watchedMovie = {
+	watchlistPoster: '',
+	watchlistTitle: '',
+	watchlistRating: '',
+	watchlistYear: '',
+	watchlistPlot: '',
+	watchlistRuntime: '',
+	watchlistImdbRating: '',
+};
 
 const renderMovies = async movieArr => {
 	movieArr.map(async movie => {
@@ -10,7 +19,7 @@ const renderMovies = async movieArr => {
 			`https://www.omdbapi.com/?i=${imdbId}&apikey=7188dc6d`
 		);
 		let imdbData = await response.json();
-		console.log(imdbData);
+		// console.log(imdbData);
 		//=========================================
 		// create div to hold data for each movie
 		const movieDiv = document.createElement('div');
@@ -79,8 +88,20 @@ const renderMovies = async movieArr => {
 
 		const watchBtn = document.createElement('button');
 		watchBtn.classList.add('watch-btn');
-		watchBtn.textContent = 'Add to Watchlist?';
+		watchBtn.textContent = 'Add to Watchlist';
 		textDiv.append(watchBtn);
+
+		watchBtn.addEventListener('click', () => {
+			watchedMovie.watchlistPoster = poster;
+			watchedMovie.watchlistTitle = title;
+			watchedMovie.watchlistRating = rating;
+			watchedMovie.watchlistYear = year;
+			watchedMovie.watchlistPlot = plot;
+			watchedMovie.watchlistRuntime = runtime;
+			watchedMovie.watchlistImdbRating = imdbRating;
+
+			console.log(watchedMovie);
+		});
 	});
 };
 

@@ -53,12 +53,14 @@ const renderMovies = async movieArr => {
 		//* plot
 		const plotEl = document.createElement('p');
 		plotEl.classList.add('margin-bottom');
+		plotEl.classList.add('plot');
 		const plot = imdbData.Plot;
 		plotEl.textContent = `${plot}`;
 		textDiv.append(plotEl);
 		//========================================
 		//* runtime
 		const runtimeEl = document.createElement('p');
+		runtimeEl.classList.add('margin-bottom');
 		const runtime = imdbData.Runtime;
 		runtimeEl.textContent = `${runtime}`;
 		textDiv.append(runtimeEl);

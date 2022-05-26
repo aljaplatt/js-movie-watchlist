@@ -111,7 +111,7 @@ h1 {
 	border: 2px solid #ffa500;
 	margin-left: 1.5em;
 	/* margin: 0 auto; */
-	max-width: 600px;
+	max-width: 650px;
 }
 
 .poster {
@@ -126,4 +126,9 @@ h1 {
 .title {
 	display: inline-block;
 	margin: 0 0.5em 0.5em 0;
+	font-size: 1.5rem;
+}
+
+.plot {
+	font-size: 1.2rem;
 }

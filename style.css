@@ -134,3 +134,13 @@ h1 {
 .plot {
 	font-size: 1.3rem;
 }
+
+.star-icon {
+	display: inline-block;
+	width: 0.9em;
+	margin-right: 0.5em;
+}
+
+.imdb-rating {
+	font-weight: bolder;
+}

@@ -66,7 +66,12 @@ const renderMovies = async movieArr => {
 		textDiv.append(runtimeEl);
 		//========================================
 		//* imdb rating
-		const imdbRatingEl = document.createElement('p');
+		const starIcon = document.createElement('img');
+		starIcon.classList.add('star-icon');
+		starIcon.src = `./img/star-icon.svg`;
+		textDiv.append(starIcon);
+		const imdbRatingEl = document.createElement('span');
+		imdbRatingEl.classList.add('imdb-rating');
 		const imdbRating = imdbData.imdbRating;
 		imdbRatingEl.textContent = `${imdbRating}`;
 		textDiv.append(imdbRatingEl);

@@ -101,6 +101,8 @@ const renderMovies = async movieArr => {
 			watchedMovie.watchlistImdbRating = imdbRating;
 
 			console.log(watchedMovie);
+			// Put the object into storage
+			localStorage.setItem('movieObject', JSON.stringify(watchedMovie));
 		});
 	});
 };

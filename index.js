@@ -1,6 +1,8 @@
 const searchBtn = document.querySelector('.search-btn');
 const userInputEl = document.querySelector('input');
 const movieContainer = document.querySelector('.movie-container');
+let movies;
+let userInput;
 let watchedMovie = {
 	watchlistPoster: '',
 	watchlistTitle: '',
@@ -10,6 +12,15 @@ let watchedMovie = {
 	watchlistRuntime: '',
 	watchlistImdbRating: '',
 };
+
+function deleteChild() {
+	//e.firstElementChild can be used.
+	let child = movieContainer.lastElementChild;
+	while (child) {
+		movieContainer.removeChild(child);
+		child = movieContainer.lastElementChild;
+	}
+}
 
 const renderMovies = async movieArr => {
 	movieArr.map(async movie => {
@@ -108,7 +119,7 @@ const renderMovies = async movieArr => {
 };
 
 const fetchMovies = async _ => {
-	const userInput = userInputEl.value;
+	userInput = userInputEl.value;
 	// console.log(userInput);
 
 	let res = await fetch(
@@ -116,9 +127,20 @@ const fetchMovies = async _ => {
 	);
 	let data = await res.json();
 	// console.log(data);
-	const movies = data.Search;
-	// console.log(movies);
+	movies = data.Search;
+	console.log(movies);
+	//
 	renderMovies(movies);
 };
 
-searchBtn.addEventListener('click', fetchMovies);
+searchBtn.addEventListener('click', () => {
+	if (!movies) {
+		console.log(movies);
+		fetchMovies();
+		userInputEl.value = '';
+	} else {
+		deleteChild();
+		fetchMovies();
+		userInputEl.value = '';
+	}
+});

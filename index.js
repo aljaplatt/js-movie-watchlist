@@ -3,6 +3,7 @@ const userInputEl = document.querySelector('input');
 const movieContainer = document.querySelector('.movie-container');
 let movies;
 let userInput;
+let localStorageKey = 0;
 let watchedMovie = {
 	watchlistPoster: '',
 	watchlistTitle: '',
@@ -12,6 +13,10 @@ let watchedMovie = {
 	watchlistRuntime: '',
 	watchlistImdbRating: '',
 };
+
+function incrementLocalStorageKey() {
+	localStorageKey++;
+}
 
 function deleteChild() {
 	//e.firstElementChild can be used.
@@ -113,7 +118,12 @@ const renderMovies = async movieArr => {
 
 			console.log(watchedMovie);
 			// Put the object into storage
-			localStorage.setItem('movieObject', JSON.stringify(watchedMovie));
+			incrementLocalStorageKey();
+
+			localStorage.setItem(
+				'movieObject' + localStorageKey,
+				JSON.stringify(watchedMovie)
+			);
 		});
 	});
 };
@@ -144,3 +154,5 @@ searchBtn.addEventListener('click', () => {
 		userInputEl.value = '';
 	}
 });
+
+//? Fn to retrieve from localStorage and Display on watchlist

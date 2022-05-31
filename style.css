@@ -126,6 +126,10 @@ h1 {
 	background-color: #eeeeee;
 }
 
+.movieDiv:first-of-type {
+	margin-top: 2.5em;
+}
+
 .textDiv {
 	/* border: 2px solid #ffa500; */
 	margin-left: 1.5em;
@@ -144,7 +148,7 @@ h1 {
 
 .title {
 	display: inline-block;
-	margin: 0 0.5em 0.5em 0;
+	margin: 0.5em 0.5em 0.5em 0;
 	font-size: 1.7rem;
 }
 
@@ -164,7 +168,7 @@ h1 {
 
 .watch-btn {
 	display: block;
-	margin-top: 1em;
+	margin: 1em 0;
 	background: gold;
 	padding: 0.5em 1em;
 	border: none;
@@ -176,4 +180,7 @@ h1 {
 .watch-btn:focus {
 	background-color: black;
 	color: gold;
+}
+
+.watchlist {
 }

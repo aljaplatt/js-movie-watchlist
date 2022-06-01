@@ -4,15 +4,16 @@ const movieContainer = document.querySelector('.movie-container');
 let movies;
 let userInput;
 let localStorageKey = 0;
-let watchedMovie = {
-	watchlistPoster: '',
-	watchlistTitle: '',
-	watchlistRating: '',
-	watchlistYear: '',
-	watchlistPlot: '',
-	watchlistRuntime: '',
-	watchlistImdbRating: '',
-};
+let watchedMovieArr = [];
+// let watchedMovie = {
+// 	watchlistPoster: '',
+// 	watchlistTitle: '',
+// 	watchlistRating: '',
+// 	watchlistYear: '',
+// 	watchlistPlot: '',
+// 	watchlistRuntime: '',
+// 	watchlistImdbRating: '',
+// };
 
 function incrementLocalStorageKey() {
 	localStorageKey++;
@@ -108,6 +109,15 @@ const renderMovies = async movieArr => {
 		textDiv.append(watchBtn);
 
 		watchBtn.addEventListener('click', () => {
+			let watchedMovie = {
+				watchlistPoster: '',
+				watchlistTitle: '',
+				watchlistRating: '',
+				watchlistYear: '',
+				watchlistPlot: '',
+				watchlistRuntime: '',
+				watchlistImdbRating: '',
+			};
 			watchedMovie.watchlistPoster = poster;
 			watchedMovie.watchlistTitle = title;
 			watchedMovie.watchlistRating = rating;
@@ -115,14 +125,14 @@ const renderMovies = async movieArr => {
 			watchedMovie.watchlistPlot = plot;
 			watchedMovie.watchlistRuntime = runtime;
 			watchedMovie.watchlistImdbRating = imdbRating;
-
 			console.log(watchedMovie);
+			watchedMovieArr.push(watchedMovie);
 			// Put the object into storage
 			incrementLocalStorageKey();
 
 			localStorage.setItem(
 				'movieObject' + localStorageKey,
-				JSON.stringify(watchedMovie)
+				JSON.stringify(watchedMovieArr)
 			);
 		});
 	});
@@ -156,3 +166,5 @@ searchBtn.addEventListener('click', () => {
 });
 
 //? Fn to retrieve from localStorage and Display on watchlist
+
+localStorage.getItem;

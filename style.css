@@ -33,8 +33,8 @@ select {
 
 body {
 	font-family: 'Source Sans Pro', sans-serif;
-	width: 60%;
-	max-width: 1300px;
+	width: 65%;
+	max-width: 1000px;
 	margin: 0 auto;
 	background-image: linear-gradient(
 		180deg,
@@ -131,14 +131,15 @@ h1 {
 }
 
 .textDiv {
-	/* border: 2px solid #ffa500; */
+	border: 2px solid #ffa500;
 	margin-left: 1.5em;
 	/* margin: 0 auto; */
+	width: 100%;
 	max-width: 650px;
 }
 
 .poster {
-	width: 25%;
+	/* width: 25%; */
 	max-width: 300px;
 }
 
@@ -183,4 +184,66 @@ h1 {
 }
 
 .watchlist {
+}
+
+@media (min-width: 1300px) {
+	.title {
+		font-size: 1.9rem;
+	}
+
+	.plot {
+		font-size: 1.5rem;
+	}
+}
+
+@media (max-width: 1090px) {
+	body {
+		width: 80%;
+	}
+	.textDiv {
+		margin: 0.5em auto;
+		max-width: 55%;
+		padding: 0 0.5em;
+	}
+
+	.title {
+		font-size: 1.4rem;
+	}
+
+	.plot {
+		font-size: 1.2rem;
+	}
+}
+
+@media (max-width: 850px) {
+	.movieDiv {
+		margin: 0.5em auto;
+		max-width: 95%;
+		flex-direction: column;
+		/* max-width: 40%; */
+	}
+	.poster {
+		max-width: 100%;
+		margin: 0 auto;
+		/* padding-top: 0.5em; */
+	}
+
+	.textDiv {
+		max-width: 90%;
+		text-align: center;
+		padding: 0 0.5em;
+		margin: 0 auto;
+	}
+
+	.watch-btn {
+		max-width: 50%;
+		margin: 0.5em auto;
+	}
+	.title {
+		font-size: 1.2rem;
+	}
+
+	.plot {
+		font-size: 1rem;
+	}
 }
